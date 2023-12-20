@@ -14,3 +14,5 @@
 # 参考：
 
 https://github.com/Chrispresso/SnakeAI.git
+
+姓名：莫伟兴
