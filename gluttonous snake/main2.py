@@ -27,9 +27,9 @@ class Individual:
         """Get the fitness of Individual."""
         game = Game([self.genes])
         self.score, self.steps, self.seed = game.play()
-        self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
-        # self.fitness = (self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
-        #                 (((.25 * self.steps) ** 1.3) * (self.score ** 1.2)))
+        # self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
+        self.fitness = (.25 * self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
+                        ((.25 * self.steps) ** 1.3)) * 100000
         self.fitness = max(self.fitness, .1)
 
 
@@ -168,8 +168,8 @@ class GA:
         # Generate children.
         children = []
         while len(children) < self.c_size:
-            # p1, p2 = self.roulette_wheel_selection(2)
-            p1, p2 = self.tournament_selection(2, 20)
+            p1, p2 = self.roulette_wheel_selection(2)
+            # p1, p2 = self.tournament_selection(2, 10)
             c1_genes, c2_genes = p1.genes.copy(), p2.genes.copy()
             # self.uniform_binary_crossover(c1_genes, c2_genes)
             # self.crossover(c1_genes, c2_genes, 0.8)  # pc: crossover probability

@@ -38,7 +38,7 @@ head-broad direction = 8
 
 输出层：4
 
-move=up,down,left,right
+move=up,down,left,right（也许可以换成三个输出层，直行，顺时针和逆时针）
 
 （PS：时间不够只能用较简单的模型）
 
@@ -70,4 +70,4 @@ ai.py为模型操作，可以设置多模型竞争;
 
 inits.py设置屏幕宽度和高度以及模型的输入和输出。
 
-考虑不周，仍有待改进。
+训练效果不行，考虑不周，仍有待改进。
