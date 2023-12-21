@@ -27,9 +27,9 @@ class Individual:
         """Get the fitness of Individual."""
         game = Game([self.genes])
         self.score, self.steps, self.seed = game.play()
-        # self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
-        self.fitness = (self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
-                        (((1.25 * self.steps) ** 1.3) * (self.score ** 1.2)))
+        self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
+        # self.fitness = (self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
+        #                 (((.25 * self.steps) ** 1.3) * (self.score ** 1.2)))
         self.fitness = max(self.fitness, .1)
 
 
