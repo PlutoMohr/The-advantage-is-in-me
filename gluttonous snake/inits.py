@@ -2,8 +2,8 @@
 TITLE = "SnakeGame"
 GRID_SIZE = 30  # grid size
 BLANK_SIZE = 40  # top size
-ROWS = 20  # screen width
-COLS = 20  # screen height
+ROWS = 10  # screen width
+COLS = 10  # screen height
 FPS = 80  # travel speed
 FONT_NAME = 'arial'
 
@@ -32,9 +32,9 @@ N_HIDDEN2 = 12
 N_OUTPUT = 4
 GENES_LEN = N_INPUT * N_HIDDEN1 + N_HIDDEN1 * N_HIDDEN2 + N_HIDDEN2 * N_OUTPUT + N_HIDDEN1 + N_HIDDEN2 + N_OUTPUT
 P_SIZE = 100  # Number of parents
-C_SIZE = 500  # Number of children
+C_SIZE = 400  # Number of children
 DIRECTIONS = [(0, -1), (0, 1), (-1, 0), (1, 0)]  # down, up, left, right
-MUTATE_RATE = 0.11  # mutation probability
+MUTATE_RATE = 0.1  # mutation probability
 
 n_state = 32
 n_action = 4

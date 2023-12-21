@@ -29,7 +29,7 @@ class Individual:
         self.score, self.steps, self.seed = game.play()
         # self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
         self.fitness = (self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
-                        (((.25 * self.steps) ** 1.3) * (self.score ** 1.2)))
+                        (((1.25 * self.steps) ** 1.3) * (self.score ** 1.2)))
         self.fitness = max(self.fitness, .1)
 
 
@@ -62,7 +62,7 @@ class GA:
     def inherit_ancestor(self):
         """Load genes from './genes/all/{i}', i: the ith individual."""
         for i in range(self.p_size):
-            pth = os.path.join("genes", "all", str(i))
+            pth = os.path.join("genes", "parents", str(i))
             with open(pth, "r") as f:
                 genes = np.array(list(map(float, f.read().split())))
                 self.population.append(Individual(genes))
@@ -199,7 +199,7 @@ class GA:
             individual.get_fitness()
         population = self.elitism_selection(self.p_size)
         for i in range(len(population)):
-            pth = os.path.join("genes", "all", str(i))
+            pth = os.path.join("genes", "parents", str(i))
             with open(pth, "w") as f:
                 for gene in self.population[i].genes:
                     f.write(str(gene) + " ")
@@ -223,7 +223,7 @@ if __name__ == '__main__':
         ga.generate_ancestor()
 
     generation = 0  # frequency
-    max_g = 2000
+    max_g = 600
     record = 0  # possible marks
     data = np.zeros([max_g, 4])
     ii = 0
