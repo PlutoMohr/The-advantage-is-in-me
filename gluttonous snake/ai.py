@@ -9,7 +9,7 @@ import torch
 
 class Snake:
     """Snake, which can move and get state of the environment.
-    Attributes:
+    Attributes233:
         body: Positions of the snake's body.
         direction: Direction of the snake's head.
         score: Score of the snake played by its Neural Network.
