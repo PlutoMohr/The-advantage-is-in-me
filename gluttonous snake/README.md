@@ -52,11 +52,9 @@ Bell, Okezue. "Applications of Gaussian Mutation for Self Adaptation in Evolutio
 Almalki, Ali Jaber, and Pawel Wocjan. "Exploration of reinforcement learning to play snake game." *2019 International Conference on Computational Science and Computational Intelligence (CSCI)*. IEEE, 2019.
 
 
-# 开发者
+# 开发细节
 
-莫伟兴，2022E8000784012（代码修改，模型设计，参数测试等，小组作业做成个人作业:) ）
-
-（PS：gene内储存经过交配后适应度最好的100个父代以及其中得分最高的几个个体;
+gene内储存经过交配后适应度最好的100个父代以及其中得分最高的几个个体
 
 seed为种子数;
 
@@ -66,7 +64,7 @@ python main2.py -i可以继承gene继续训练，-s为展示图像;
 
 human.py为人工操作，有延迟;
 
-ai.py为模型操作，可以设置多模型竞争;
+ai.py为模型操作，可设置多个ai agent;
 
 inits.py设置屏幕宽度和高度以及模型的输入和输出。
 
