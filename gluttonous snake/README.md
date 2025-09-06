@@ -52,7 +52,7 @@ Bell, Okezue. "Applications of Gaussian Mutation for Self Adaptation in Evolutio
 Almalki, Ali Jaber, and Pawel Wocjan. "Exploration of reinforcement learning to play snake game." *2019 International Conference on Computational Science and Computational Intelligence (CSCI)*. IEEE, 2019.
 
 
-# 制作人
+# 负责人
 
 莫伟兴，2022E8000784012（代码修改，模型设计，参数测试等，小组作业做成个人作业:) ）
 
