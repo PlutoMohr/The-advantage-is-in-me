@@ -4,6 +4,7 @@ import numpy as np
 from ai import Game
 from inits import *
 import os
+import imageio.v2 as imageio  # For the production of GIF
 
 
 class Individual:
@@ -27,9 +28,9 @@ class Individual:
         """Get the fitness of Individual."""
         game = Game([self.genes])
         self.score, self.steps, self.seed = game.play()
-        # self.fitness = (self.score + 1 / self.steps) * 100000  # fitness functions
+        # self.fitness = (self.score + 1 / self.steps) * 100000
         self.fitness = (.25 * self.steps + ((2 ** self.score) + (self.score ** 2.1) * 500) -
-                        ((.25 * self.steps) ** 1.3)) * 100000
+                        ((.25 * self.steps) ** 1.3)) * 100000  # fitness functions
         self.fitness = max(self.fitness, .1)
 
 
@@ -211,8 +212,8 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--inherit', action="store_true",
                         help="whether to load genes from path ./genes/all.")
 
-    parser.add_argument('-s', '--show', action="store_true",
-                        help='whether to show the best individual to play snake after each involve.')
+    # parser.add_argument('-s', '--show', action="store_true",
+    #                     help='whether to show the best individual to play snake after each involve.')
     args = parser.parse_args()
 
     ga = GA()
@@ -223,10 +224,13 @@ if __name__ == '__main__':
         ga.generate_ancestor()
 
     generation = 0  # frequency
-    max_g = 600   # max generation
+    max_g = 600  # max generation
     record = 0  # possible marks
     data = np.zeros([max_g, 4])
     ii = 0
+
+    # Display once every 20 generations.
+    show_every_n_generations = 20
 
     while generation < max_g:
         generation += 1
@@ -240,11 +244,22 @@ if __name__ == '__main__':
         if ga.best_individual.score >= record:
             record = ga.best_individual.score
             ga.save_best()
-        if args.show:
-            genes = ga.best_individual.genes
-            seed = ga.best_individual.seed
-            game = Game(show=True, genes_list=[genes], seed=seed)
-            game.play()
+
+        if generation % show_every_n_generations == 0:
+            print(f"\n--- 正在展示第 {generation} 代最佳个体游戏画面 ---")
+            try:
+                # Get the genes and seeds of the current best individual.
+                genes = ga.best_individual.genes
+                seed = ga.best_individual.seed
+                # Create a game instance, set show = True to open the graphical interface.
+                game = Game(show=True, genes_list=[genes], seed=seed)
+                # Run the game.
+                game.play()
+                # After the game window closes, control will come back here and continue training.
+                print(f"--- 展示完毕，继续训练 ---\n")
+            except Exception as e:
+                # If an error occurs ( such as a pygame initialization problem ), print the error and continue training
+                print(f"展示时发生错误: {e}. 继续训练...")
 
         # Save the population every 20 generations.
         if generation % 20 == 0:

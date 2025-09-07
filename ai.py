@@ -3,8 +3,8 @@ import random
 from inits import *
 import numpy as np
 from model import Net
-import os
 import torch
+import os
 
 
 class Snake:
@@ -247,6 +247,9 @@ class Game:
             if event.type == pg.QUIT:
                 pg.quit()
                 quit()
+
+    # def step(self):
+
 
 
 def play_best(score):

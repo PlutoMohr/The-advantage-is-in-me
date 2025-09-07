@@ -4,7 +4,7 @@ GRID_SIZE = 30  # grid size
 BLANK_SIZE = 40  # top size
 ROWS = 10  # screen width
 COLS = 10  # screen height
-FPS = 80  # AI travel speed
+FPS = 10  # AI travel speed
 FPS_human = 10  # human travel speed
 FONT_NAME = 'arial'
 
