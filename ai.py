@@ -273,7 +273,7 @@ def play_all(n=P_SIZE):
     """
     genes_list = []
     for i in range(n):
-        genes_pth = os.path.join("genes", "all", str(i))
+        genes_pth = os.path.join("genes", "parents", str(i))
         # genes_pth = os.path.join("genes", "best", str(i+1))
         with open(genes_pth, "r") as f:
             genes = np.array(list(map(float, f.read().split())))
@@ -284,5 +284,5 @@ def play_all(n=P_SIZE):
 
 
 if __name__ == '__main__':
-    play_all(2)   # competition
-    # play_best(1)  # optimal choice
+    # play_all(2)   # AI competition
+    play_best(1)  # optimal choice
