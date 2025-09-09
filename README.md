@@ -1,81 +1,110 @@
 # Snake Game
 
-使用遗传算法和神经网络实现的代码，其中：
+本项目实现了一个基于遗传算法（Genetic Algorithm, GA）和神经网络（Neural Network, NN）的贪吃蛇agent。
 
-* 神经网络预测走向
-* 遗传算法更新神经网络的参数（weights = genes）
+- 神经网络负责预测贪吃蛇的移动方向。
+- 遗传算法用于优化神经网络的参数（即权重，作为基因）。
 
-## 遗传算法
+---
 
-如图
+## 目录结构说明
 
-![10386940f6a0d1d8226405fa.webp](citation/10386940-f6a0d1d8226405fa.webp)
+- `train.py`：主训练脚本，包含遗传算法主流程。
+- `ai.py`：AI自动游玩与可视化，支持单体和多体对战。
+- `human.py`：人类玩家游玩界面。
+- `model.py`：神经网络模型定义。
+- `inits.py`：全局参数与常量设置。
+- `genes/`：存储父代和最优个体的基因参数。
+- `seed/`：存储每个最优个体的随机种子。
+- `generation_all.txt`：记录每一代的训练数据。
 
+---
 
+## 遗传算法流程
 
-交叉算法：两点交叉（存在概率发生）
+### 1. 初始化种群
+- 随机生成 `P_SIZE`（如100）个父代，每个个体的基因为一组神经网络权重。
+- 每个个体通过 `Individual` 类封装。
 
-变异算子：高斯变异（存在概率发生）
+### 2. 适应度评估
+- 每个个体用其基因（神经网络权重）游玩一局游戏，获得分数（score）、步数（steps）等。
+- 适应度函数综合考虑分数和步数，具体见 `Individual.get_fitness()`。
 
-选择算子：轮盘赌选择法
+### 3. 选择父代
+- 采用精英选择（elitism selection），每代保留适应度最高的 `P_SIZE` 个体作为父代。
+- 也可选用轮盘赌（roulette wheel）或锦标赛（tournament）等策略。
 
-利用遗传算法更新神经网络中的权重，将其作为染色体中的基因排序，然后随机生成100个父代进行交配产生400个子代，逐步筛选出优秀个体并存储其基因段。
+### 4. 交叉（Crossover）
+- 两点交叉（Two-point crossover）：随机选两个切点，交换区间基因片段。
+- 交叉概率 `pc`（如0.8），未命中则直接复制。
 
-### **进化逻辑**
+### 5. 变异（Mutation）
+- 高斯变异（Gaussian mutation）：以概率 `MUTATE_RATE`（如0.1）对每个基因加高斯噪声。
+- 变异幅度可调节。
 
-**选择父代：** 在每一代进化开始时，算法会从当前种群中通过 self.elitism_selection(self.p_size) 选出最优的 p_size 个个体作为父代。
+### 6. 子代生成
+- 每次从父代中选两人交配，产生2个子代，直到生成 `C_SIZE`（如400）个子代。
+- 子代和父代合并为新一代种群。
 
-**生成子代：** 接下来，在一个 while 循环中，算法会持续生成新的子代，直到子代数量 len(children) 达到 self.c_size。
+### 7. 记录与保存
+- 每代保存最优个体的基因和种子到 `genes/best/` 和 `seed/`。
+- 每20代保存当前父代基因到 `genes/parents/`，便于断点续训。
+- 每代训练数据（代数、历史最高分、本代最高分、均分）写入 `generation_all.txt`。
 
-关键点： 每次循环会产生2个子代个体。
-因此，要产生 c_size 个子代，这个循环需要运行 c_size / 2 次。
+---
 
-**合并种群：** 进化完成后，新的种群由全部父代和全部子代共同组成。因此，下一代种群的总数 = p_size (父代数量) + c_size (子代数量)。
+## 神经网络结构
 
-## 神经网络
+- 输入层：32维（包括头/尾方向、8方向视野等）
+- 隐藏层1：24维
+- 隐藏层2：12维
+- 输出层：4维（上、下、左、右）
+- 激活函数：ReLU + Sigmoid
+- 权重参数总数：`GENES_LEN = N_INPUT * N_HIDDEN1 + N_HIDDEN1 * N_HIDDEN2 + N_HIDDEN2 * N_OUTPUT + N_HIDDEN1 + N_HIDDEN2 + N_OUTPUT`
 
-输入层：32
+---
 
-snake head=up,down,left,right
+## 训练与测试
 
-snake tail=up,down,left,right
+### 训练命令
+- `python train.py`：从头开始训练。
+- `python train.py -i`：继承 `genes/parents/` 目录下的父代基因继续训练。
 
-head-food direction = 8
+### 可视化与测试
+- `python ai.py`：调用 `play_best(score)` 或 `play_all(n)`，可视化最优个体或全部父代的表现。
+- `python human.py`：人类手动游玩。
 
-head-self direction = 8
+---
 
-head-broad direction = 8
+## 参数说明（inits.py）
+- `P_SIZE`：父代数量（如100）
+- `C_SIZE`：子代数量（如400）
+- `MUTATE_RATE`：变异概率（如0.1）
+- `N_INPUT`、`N_HIDDEN1`、`N_HIDDEN2`、`N_OUTPUT`：神经网络结构
+- `DIRECTIONS`：动作空间
 
-输出层：4
+---
 
-move=up,down,left,right（也许可以换成三个输出层，直行，顺时针和逆时针）
+## 文件与数据说明
+- `genes/parents/`：每20代保存一次父代基因，便于断点续训。
+- `genes/best/`：每次出现新高分时保存最优个体基因。
+- `seed/`：与 `genes/best/` 配套，记录最优个体的随机种子。
+- `generation_all.txt`：每20代追加写入训练数据，格式为：`generation record best_score avg_score`
 
-（PS：时间不够只能用较简单的模型）
+---
 
+## 常见问题与改进建议
 
-# 参考：
+- **模型容易“自尽”**：当前适应度函数和奖励机制较为简单，建议引入更复杂的奖励（如距离食物远近、探索性奖励等）。
+- **收敛速度慢**：可尝试增加种群规模、调整变异率、引入多样性保持机制。
+- **神经网络结构简单**：可尝试更深/更宽的网络，或引入卷积等结构。
+- **断点续训**：每20代自动保存父代基因，支持 `-i` 参数断点续训。
+- **可视化**：`ai.py` 支持多体对战和最优个体回放，便于观察训练效果。
 
-https://github.com/Chrispresso/SnakeAI.git
+---
 
-Bell, Okezue. "Applications of Gaussian Mutation for Self Adaptation in Evolutionary Genetic Algorithms." *arXiv preprint arXiv:2201.00285* (2022).
+## 参考文献
 
-Almalki, Ali Jaber, and Pawel Wocjan. "Exploration of reinforcement learning to play snake game." *2019 International Conference on Computational Science and Computational Intelligence (CSCI)*. IEEE, 2019.
-
-
-# 开发细节
-
-gene储存经过交配后适应度最好的100个父代以及其中得分最高的个体
-
-seed为种子数;
-
-train.py为训练文件，遗传算法在其中设置;
-
-python train.py -i可以继承gene继续训练，-s为展示图像;
-
-human.py可生成人类游玩的游戏界面;
-
-ai.py为模型游玩，可设置多个ai agent;
-
-inits.py设置屏幕宽度和高度以及模型的输入和输出。
-
-训练效果欠佳，目标趋向于“自尽”，考虑不周，仍有待改进。
+- https://github.com/Chrispresso/SnakeAI.git
+- Bell, Okezue. "Applications of Gaussian Mutation for Self Adaptation in Evolutionary Genetic Algorithms." *arXiv preprint arXiv:2201.00285* (2022).
+- Almalki, Ali Jaber, and Pawel Wocjan. "Exploration of reinforcement learning to play snake game." *2019 International Conference on Computational Science and Computational Intelligence (CSCI)*. IEEE, 2019.

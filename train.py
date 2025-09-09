@@ -61,7 +61,7 @@ class GA:
             self.population.append(Individual(genes))
 
     def inherit_ancestor(self):
-        """Load genes from './genes/all/{i}', i: the ith individual."""
+        """Load genes from './genes/parents/{i}', i: the ith individual."""
         for i in range(self.p_size):
             pth = os.path.join("genes", "parents", str(i))
             with open(pth, "r") as f:
@@ -82,12 +82,12 @@ class GA:
         po = random.random()  # 0-1
         if po < pc:
             if point1 > point2 and point1 != point2:
-                c = point1
-                point1 = point2
-                point2 = c
-                c1_genes[point1:point2], c2_genes[point1:point2] = c2_genes[point1:point2], c1_genes[point1:point2]
-            else:
-                c1_genes[point2:point1], c2_genes[point2:point1] = c2_genes[point2:point1], c1_genes[point2:point1]
+                point1, point2 = point2, point1
+            if point1 != point2:
+                temp1 = c1_genes[point1:point2].copy()
+                temp2 = c2_genes[point1:point2].copy()
+                c1_genes[point1:point2] = temp2
+                c2_genes[point1:point2] = temp1
 
     def uniform_binary_crossover(self, c1_genes, c2_genes):
         """Uniform-binary crossover"""
@@ -113,8 +113,8 @@ class GA:
         # Determine which genes will be mutated
         mutation_array = np.random.random(c_genes.shape) < self.mutate_rate
         # If mu and sigma are defined, create gaussian distribution around each one
-        if mu and sigma:
-            gaussian_mutation = np.random.normal(mu, sigma)
+        if mu is not None and sigma is not None:
+            gaussian_mutation = np.random.normal(mu, sigma, size=c_genes.shape)
         # Otherwise center around N(0,1)
         else:
             gaussian_mutation = np.random.normal(size=c_genes.shape)
@@ -187,10 +187,12 @@ class GA:
         """Save the best individual that can get #score so far."""
         score = self.best_individual.score
         genes_pth = os.path.join("genes", "best", str(score))
+        os.makedirs(os.path.dirname(genes_pth), exist_ok=True)
         with open(genes_pth, "w") as f:
             for gene in self.best_individual.genes:
                 f.write(str(gene) + " ")
         seed_pth = os.path.join("seed", str(score))
+        os.makedirs(os.path.dirname(seed_pth), exist_ok=True)
         with open(seed_pth, "w") as f:
             f.write(str(self.best_individual.seed))
 
@@ -201,19 +203,16 @@ class GA:
         population = self.elitism_selection(self.p_size)
         for i in range(len(population)):
             pth = os.path.join("genes", "parents", str(i))
+            os.makedirs(os.path.dirname(pth), exist_ok=True)
             with open(pth, "w") as f:
-                for gene in self.population[i].genes:
+                for gene in population[i].genes:
                     f.write(str(gene) + " ")
 
 
 if __name__ == '__main__':
-
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-i', '--inherit', action="store_true",
-                        help="whether to load genes from path ./genes/all.")
-
-    # parser.add_argument('-s', '--show', action="store_true",
-    #                     help='whether to show the best individual to play snake after each involve.')
+                        help="whether to load genes from path ./genes/parents.")
     args = parser.parse_args()
 
     ga = GA()
@@ -224,10 +223,9 @@ if __name__ == '__main__':
         ga.generate_ancestor()
 
     generation = 0  # frequency
-    max_g = 600  # max generation
+    max_g = 1000  # max generation
     record = 0  # possible marks
-    data = np.zeros([max_g, 4])
-    ii = 0
+    all_data = []  # 使用列表存储所有数据，避免固定大小数组可能的越界问题
 
     # Display once every 20 generations.
     show_every_n_generations = 20
@@ -235,11 +233,9 @@ if __name__ == '__main__':
     while generation < max_g:
         generation += 1
         ga.evolve()
-        # record is the highest score that can be achieved by the current generation.
         print("generation:", generation, ", record:", record,
               ", best score:", ga.best_individual.score, ", average score:", ga.avg_score)
-        data[ii, :] = [generation, record, ga.best_individual.score, ga.avg_score]
-        ii += 1
+        all_data.append([generation, record, ga.best_individual.score, ga.avg_score])
 
         if ga.best_individual.score >= record:
             record = ga.best_individual.score
@@ -248,25 +244,18 @@ if __name__ == '__main__':
         if generation % show_every_n_generations == 0:
             print(f"\n--- 正在展示第 {generation} 代最佳个体游戏画面 ---")
             try:
-                # Get the genes and seeds of the current best individual.
                 genes = ga.best_individual.genes
                 seed = ga.best_individual.seed
-                # Create a game instance, set show = True to open the graphical interface.
                 game = Game(show=True, genes_list=[genes], seed=seed)
-                # Run the game.
                 game.play()
-                # After the game window closes, control will come back here and continue training.
                 print(f"--- 展示完毕，继续训练 ---\n")
             except Exception as e:
-                # If an error occurs ( such as a pygame initialization problem ), print the error and continue training
                 print(f"展示时发生错误: {e}. 继续训练...")
 
-        # Save the population every 20 generations.
         if generation % 20 == 0:
             ga.save_all()
-
-        # Save all the generation. (<= max_g)
-        with open('generation_all.txt', 'w') as fw:
-            for line in data:
-                row = ' '.join(map(str, line)) + '\n'
-                fw.write(row)
+            with open('generation_all.txt', 'a') as fw:
+                for gen_data in all_data[-20:]:
+                    row = ' '.join(map(str, gen_data)) + '\n'
+                    fw.write(row)
+            all_data = []
