@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5220398e-a46f-4328-8740-cd7ab2bc85f8" name="更改" comment="Add gif generating function">
+      <change beforePath="$PROJECT_DIR$/generation_all.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/1" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/10" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/11" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/12" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/13" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/14" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/16" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/18" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/19" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/2" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/21" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/22" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/24" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/25" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/27" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/28" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/29" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/3" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/30" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/31" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/33" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/34" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/35" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/37" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/4" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/5" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/6" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/7" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/8" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/best/9" beforeDir="false" afterPath="$PROJECT_DIR$/genes/best/9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/0" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/1" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/10" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/11" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/12" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/13" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/14" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/15" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/16" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/17" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/18" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/19" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/2" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/20" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/21" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/22" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/23" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/24" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/25" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/26" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/27" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/28" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/29" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/3" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/30" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/31" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/32" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/33" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/34" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/35" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/36" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/37" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/38" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/38" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/39" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/4" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/40" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/40" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/41" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/41" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/42" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/42" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/43" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/43" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/44" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/44" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/45" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/46" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/47" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/47" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/48" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/48" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/49" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/49" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/5" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/50" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/50" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/51" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/52" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/52" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/53" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/53" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/54" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/54" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/55" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/55" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/56" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/57" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/57" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/58" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/58" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/59" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/6" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/60" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/60" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/61" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/62" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/62" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/63" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/63" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/64" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/65" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/65" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/66" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/66" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/67" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/67" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/68" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/68" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/69" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/69" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/7" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/70" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/70" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/71" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/72" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/72" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/73" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/73" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/74" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/75" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/75" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/76" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/76" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/77" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/77" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/78" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/78" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/79" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/79" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/8" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/80" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/80" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/81" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/81" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/82" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/82" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/83" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/83" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/84" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/84" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/85" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/85" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/86" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/86" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/87" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/87" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/88" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/88" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/89" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/89" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/9" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/90" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/90" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/91" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/91" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/92" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/92" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/93" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/93" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/94" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/94" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/95" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/95" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/96" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/96" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/97" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/97" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/98" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/98" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genes/parents/99" beforeDir="false" afterPath="$PROJECT_DIR$/genes/parents/99" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/1" beforeDir="false" afterPath="$PROJECT_DIR$/seed/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/10" beforeDir="false" afterPath="$PROJECT_DIR$/seed/10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/11" beforeDir="false" afterPath="$PROJECT_DIR$/seed/11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/12" beforeDir="false" afterPath="$PROJECT_DIR$/seed/12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/13" beforeDir="false" afterPath="$PROJECT_DIR$/seed/13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/14" beforeDir="false" afterPath="$PROJECT_DIR$/seed/14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/16" beforeDir="false" afterPath="$PROJECT_DIR$/seed/16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/18" beforeDir="false" afterPath="$PROJECT_DIR$/seed/18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/19" beforeDir="false" afterPath="$PROJECT_DIR$/seed/19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/2" beforeDir="false" afterPath="$PROJECT_DIR$/seed/2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/21" beforeDir="false" afterPath="$PROJECT_DIR$/seed/21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/22" beforeDir="false" afterPath="$PROJECT_DIR$/seed/22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/24" beforeDir="false" afterPath="$PROJECT_DIR$/seed/24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/25" beforeDir="false" afterPath="$PROJECT_DIR$/seed/25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/27" beforeDir="false" afterPath="$PROJECT_DIR$/seed/27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/28" beforeDir="false" afterPath="$PROJECT_DIR$/seed/28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/29" beforeDir="false" afterPath="$PROJECT_DIR$/seed/29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/3" beforeDir="false" afterPath="$PROJECT_DIR$/seed/3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/30" beforeDir="false" afterPath="$PROJECT_DIR$/seed/30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/31" beforeDir="false" afterPath="$PROJECT_DIR$/seed/31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/33" beforeDir="false" afterPath="$PROJECT_DIR$/seed/33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/34" beforeDir="false" afterPath="$PROJECT_DIR$/seed/34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/35" beforeDir="false" afterPath="$PROJECT_DIR$/seed/35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/37" beforeDir="false" afterPath="$PROJECT_DIR$/seed/37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/4" beforeDir="false" afterPath="$PROJECT_DIR$/seed/4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/5" beforeDir="false" afterPath="$PROJECT_DIR$/seed/5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/6" beforeDir="false" afterPath="$PROJECT_DIR$/seed/6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/7" beforeDir="false" afterPath="$PROJECT_DIR$/seed/7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/8" beforeDir="false" afterPath="$PROJECT_DIR$/seed/8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seed/9" beforeDir="false" afterPath="$PROJECT_DIR$/seed/9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PlutoMohr&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PlutoMohr/Gluttonous-Snake-AI-Development.git&quot;,
+    &quot;accountId&quot;: &quot;8541106a-cc9d-4bc9-ba72-854b769fb69a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="32UI84CHkSnodJIEGLxlfNsjWbf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.train.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "pluto",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.general.GeneralConfigurable"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5220398e-a46f-4328-8740-cd7ab2bc85f8" name="更改" comment="" />
+      <created>1757468562913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757468562913</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add gif generating function">
+      <option name="closed" value="true" />
+      <created>1757495931134</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757495931134</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="retraining" />
+    <MESSAGE value="Add gif generating function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gif generating function" />
+  </component>
+</project>

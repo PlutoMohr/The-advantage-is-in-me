@@ -235,12 +235,12 @@ if __name__ == '__main__':
         ga.generate_ancestor()
 
     generation = 0  # frequency
-    max_g = 1500  # max generation
+    max_g = 1200  # max generation
     record = 0  # possible marks
     all_data = []  # using lists to store all data avoids possible bounds violations for fixed-size arrays
 
-    # Display once every 20 generations.
-    show_every_n_generations = 20
+    # Display once every 40 generations.
+    show_every_n_generations = 40
 
     while generation < max_g:
         generation += 1
@@ -249,13 +249,13 @@ if __name__ == '__main__':
               ", best score:", ga.best_individual.score, ", average score:", ga.avg_score)
         all_data.append([generation, record, ga.best_individual.score, ga.avg_score])
 
-        if ga.best_individual.score >= record:
+        if ga.best_individual.score > record:
             record = ga.best_individual.score
             ga.save_best()
             ga.save_best_gif()  # Save gif when new record
 
-        if generation % show_every_n_generations == 0 and generation < max_g:
-            print(f"\n--- Displaying the best individual's game at generation {generation} ---")
+        if generation % show_every_n_generations == 0:
+            print(f"\n--- Displaying the individual's game at generation {generation} ---")
             try:
                 genes = ga.best_individual.genes
                 seed = ga.best_individual.seed
@@ -264,14 +264,14 @@ if __name__ == '__main__':
                 print(f"--- Display finished, continue training ---\n")
             except Exception as e:
                 print(f"Error occurred during display: {e}. Continue training...")
+        elif generation == max_g:
+            print(f"--- Display finished, stop training ---\n")
 
-        if generation % 20 == 0:
+        if generation % show_every_n_generations == 0:
             ga.save_all()
             with open('generation_all.txt', 'a') as fw:
-                for gen_data in all_data[-20:]:
+                for gen_data in all_data[-40:]:
                     row = ' '.join(map(str, gen_data)) + '\n'
                     fw.write(row)
             all_data = []
 
-    else:
-        print(f"--- Display finished, stop training ---\n")
