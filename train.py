@@ -196,6 +196,18 @@ class GA:
         with open(seed_pth, "w") as f:
             f.write(str(self.best_individual.seed))
 
+    def save_best_gif(self, gif_dir="gifs", gif_duration=0.08):
+        """Save a gif of the best individual's game play."""
+        score = self.best_individual.score
+        genes = self.best_individual.genes
+        seed = self.best_individual.seed
+        os.makedirs(gif_dir, exist_ok=True)
+        gif_path = os.path.join(gif_dir, f"best_{score}.gif")
+        from ai import Game
+        game = Game(show=True, genes_list=[genes], seed=seed)
+        # Use the new play_and_capture method
+        game.play_and_capture(capture_frames=True, gif_path=gif_path, gif_duration=gif_duration)
+
     def save_all(self):
         """Save the top population."""
         for individual in self.population:
@@ -223,9 +235,9 @@ if __name__ == '__main__':
         ga.generate_ancestor()
 
     generation = 0  # frequency
-    max_g = 1000  # max generation
+    max_g = 1500  # max generation
     record = 0  # possible marks
-    all_data = []  # 使用列表存储所有数据，避免固定大小数组可能的越界问题
+    all_data = []  # using lists to store all data avoids possible bounds violations for fixed-size arrays
 
     # Display once every 20 generations.
     show_every_n_generations = 20
@@ -240,17 +252,18 @@ if __name__ == '__main__':
         if ga.best_individual.score >= record:
             record = ga.best_individual.score
             ga.save_best()
+            ga.save_best_gif()  # Save gif when new record
 
-        if generation % show_every_n_generations == 0:
-            print(f"\n--- 正在展示第 {generation} 代最佳个体游戏画面 ---")
+        if generation % show_every_n_generations == 0 and generation < max_g:
+            print(f"\n--- Displaying the best individual's game at generation {generation} ---")
             try:
                 genes = ga.best_individual.genes
                 seed = ga.best_individual.seed
                 game = Game(show=True, genes_list=[genes], seed=seed)
                 game.play()
-                print(f"--- 展示完毕，继续训练 ---\n")
+                print(f"--- Display finished, continue training ---\n")
             except Exception as e:
-                print(f"展示时发生错误: {e}. 继续训练...")
+                print(f"Error occurred during display: {e}. Continue training...")
 
         if generation % 20 == 0:
             ga.save_all()
@@ -259,3 +272,6 @@ if __name__ == '__main__':
                     row = ' '.join(map(str, gen_data)) + '\n'
                     fw.write(row)
             all_data = []
+
+    else:
+        print(f"--- Display finished, stop training ---\n")

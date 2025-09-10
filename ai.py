@@ -183,6 +183,43 @@ class Game:
 
         return score, steps, self.seed
 
+    def play_and_capture(self, capture_frames=False, frame_dir=None, gif_path=None, gif_duration=0.08):
+        """Play the game, optionally capture frames and save as GIF."""
+        alive_snakes_set = set(self.snakes)
+        frames = []
+        while alive_snakes_set and self.food is not None:
+            if self.show:
+                self._event()
+                self._draw()
+                if capture_frames:
+                    frame = pg.surfarray.array3d(self.screen)
+                    frame = np.transpose(frame, (1, 0, 2))  # Convert to (height, width, 3)
+                    frames.append(frame.copy())
+            for snake in alive_snakes_set:
+                has_eat = snake.move(self.food)
+                if has_eat:
+                    self.food = self._place_food()
+                    if self.food is None:
+                        break
+                if snake.score > self.best_score:
+                    self.best_score = snake.score
+            alive_snakes = [snake for snake in alive_snakes_set if not snake.dead]
+            alive_snakes_set = set(alive_snakes)
+        if len(self.snakes) > 1:
+            score = [snake.score for snake in self.snakes]
+            steps = [snake.steps for snake in self.snakes]
+        else:
+            score, steps = self.snakes[0].score, self.snakes[0].steps
+        if capture_frames and frames:
+            import imageio.v2 as imageio
+            if frame_dir:
+                os.makedirs(frame_dir, exist_ok=True)
+                for idx, frame in enumerate(frames):
+                    imageio.imwrite(os.path.join(frame_dir, f"frame_{idx:04d}.png"), frame)
+            if gif_path:
+                imageio.mimsave(gif_path, frames, duration=gif_duration)
+        return score, steps, self.seed
+
     def _place_food(self):
         """Find an empty grid to place food."""
         board = set([(x, y) for x in range(self.X) for y in range(self.Y)])

@@ -69,6 +69,7 @@ class Net(nn.Module):
 
 
 if __name__ == '__main__':
+    # Example usage of the Net class.
     weights = [random.random() for i in range(32 * 24 + 24 * 12 + 12 * 4 + 24 + 12 + 4)]
     model1 = Net(32, 24, 12, 4, weights)
     input = [random.random() for _ in range(32)]
